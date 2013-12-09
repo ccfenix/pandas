@@ -46,4 +46,5 @@ def aj(df1, df2, overwriteColumns=True, inplace=False):
     else:
         return result
 
-
+def lj(df1, df2, overwriteColumns=True, inplace=False):
+  return 0;
