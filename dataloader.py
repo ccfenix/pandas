@@ -6,26 +6,18 @@ import math
 set_option('max_rows',200)
 set_option('max_columns', 100)
 
-<<<<<<< HEAD
 univ_file_template = "/home/ubuntu/uds/univ/%Y/%m/%d/index.html"
 
-=======
->>>>>>> iss1
 def loadSpy(tdatetime):
   full_date=datetime.strftime( tdatetime,  "/home/ubuntu/uds/taq/%Y/%m/%d/%Y%m%d.spy.csv");
   print full_date
 
 def loadUniv(tdatetime):
-<<<<<<< HEAD
-	full_path=datetime.strftime( tdatetime, univ_file_template);
-	return read_csv(full_path, skiprows=1);
-=======
-  full_path=datetime.strftime( tdatetime,  "/home/ubuntu/uds/univ/%Y/%m/%d/index.html");
+  full_path=datetime.strftime( tdatetime, univ_file_template);
   return read_csv(full_path, skiprows=1);
 
 def loadEodCrossingPrice(tdatetime):
   return 0
->>>>>>> iss1
 
 univ = loadUniv(datetime(2013, 11, 15))
 univ= univ[univ.bats_prev_close>1.0][univ.reuters_exchange_code.isin(['L', 'DE'])].set_index(['bats_name'])
