@@ -5,12 +5,15 @@ import math
 
 set_option('max_rows',200)
 set_option('max_columns', 100)
+
+univ_file_template = "/home/ubuntu/uds/univ/%Y/%m/%d/index.html"
+
 def loadSpy(tdatetime):
 	full_date=datetime.strftime( tdatetime,  "/home/ubuntu/uds/taq/%Y/%m/%d/%Y%m%d.spy.csv");
 	print full_date
 
 def loadUniv(tdatetime):
-	full_path=datetime.strftime( tdatetime,  "/home/ubuntu/uds/univ/%Y/%m/%d/index.html");
+	full_path=datetime.strftime( tdatetime, univ_file_template);
 	return read_csv(full_path, skiprows=1);
 
 univ = loadUniv(datetime(2013, 11, 15))
